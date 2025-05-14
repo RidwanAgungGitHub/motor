@@ -187,7 +187,7 @@
                         </div>
                         <div class="receipt-footer">
                             <p>Terima kasih atas kunjungan Anda!</p>
-                            <p>Barang yang sudah dibeli tidak dapat ditukar kembali</p>
+                            <p>Barang yang sudah dibeli tidak dapat ditukar kembali </p>
                         </div>
                     </div>
                 </div>
