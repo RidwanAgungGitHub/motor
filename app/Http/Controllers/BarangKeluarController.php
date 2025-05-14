@@ -147,7 +147,8 @@ class BarangKeluarController extends Controller
 
     public function kasir()
     {
-        return view('barang_keluar.kasir');
+        $data = Barang::all();
+        return view('barang_keluar.kasir', compact('data'));
     }
 
     public function prosesTransaksi(Request $request)

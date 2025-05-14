@@ -21,6 +21,10 @@
                                     <label for="barang_search">Cari Barang:</label>
                                     <select id="barang_search" class="form-control barang-select">
                                         <option value="">-- Pilih Barang --</option>
+                                        @foreach ($data as $item )
+                                            <option value="{{ $item->id }}">{{ $item->nama_barang }} - {{ $item->merek }} - {{ $item->harga }}</option>
+
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>
