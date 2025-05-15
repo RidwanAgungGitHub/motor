@@ -7,53 +7,6 @@
         let totalAmount = 0;
         let productCache = {}; // Cache for product data
 
-        // Initialize Select2 for product search
-        $('.barang-select').select2({
-            placeholder: 'Cari barang (nama atau kode)',
-            minimumInputLength: 2,
-            ajax: {
-                url: '{{ route('kasir.search-product') }}',
-                dataType: 'json',
-                delay: 250,
-                data: function(params) {
-                    return {
-                        q: params.term
-                    };
-                },
-                processResults: function(data) {
-                    // Cache the product data for later use
-                    data.forEach(item => {
-                        if (item.product && item.product.id) {
-                            productCache[item.product.id] = item.product;
-                        }
-                    });
-
-                    return {
-                        results: data
-                    };
-                },
-                cache: true
-            }
-        });
-
-        // Event when a product is selected
-        $('#barang_search').on('select2:select', function(e) {
-            // Directly use the product data from the selection
-            if (e.params.data && e.params.data.product) {
-                selectedProduct = e.params.data.product;
-
-                // Store in cache
-                productCache[selectedProduct.id] = selectedProduct;
-
-                // Display product info
-                displaySelectedProductInfo(selectedProduct);
-                $('#jumlah').val(1);
-                $('#jumlah').attr('max', selectedProduct.stok);
-            } else {
-                alert('Data produk tidak lengkap. Silakan coba lagi.');
-            }
-        });
-
         // Display product info
         function displaySelectedProductInfo(product) {
             $('#selected-kode').text(product.kode || product.id);
