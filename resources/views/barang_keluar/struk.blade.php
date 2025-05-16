@@ -24,7 +24,7 @@
                     <div class="row mb-3">
                         <div class="col-md-6">
                             <p><strong>No. Invoice:</strong> {{ $checkout['invoice_number'] }}</p>
-                            <p><strong>Tanggal:</strong> {{ $checkout['tanggal'] }}</p>
+                            <p><strong>Tanggal: </strong> {{ $checkout['tanggal'] }}</p>
                         </div>
                         <div class="col-md-6 text-right">
                             <p><strong>Pelanggan:</strong> {{ $checkout['nama_pelanggan'] }}</p>
